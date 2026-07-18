@@ -1,0 +1,142 @@
+:root {
+    --cor-principal: rgb(65, 101, 113);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    max-width: 800px;
+    height: auto;
+    text-align: center;
+    
+}
+
+header  {
+    display: block;
+    background-color: var(--cor-principal);
+
+}
+
+header span {
+    display: block;
+    color: white;
+    
+}
+
+body h1 {
+    font-family: inter, sans-serif;
+    
+} 
+
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    color: inherit;
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgb(66, 70, 71);
+ 
+}
+
+header nav a {
+    color: white;
+    text-decoration: none; /* Remove o sublinhado padrão */
+}
+
+.div_main_aside {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    margin: 1rem;
+    display: flex;
+    
+}
+
+.card p {
+    margin: 1rem;
+}
+
+
+img {
+    height: 5rem;
+    width: auto;
+    margin-left: 30px;
+    margin: 20px;
+    
+}
+
+#img_sobre_mim {
+    height: 10rem;
+    border: 2px solid black;
+    border-radius: 30px;
+    
+}
+
+main {
+    border: 1px solid #000000;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 70%;
+}
+
+main h3 {
+    color: var(--cor-principal);
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.071);
+    width: 20rem;
+    margin: 0 auto;
+}
+
+h4{
+    background-color: var(--cor-principal);
+    margin: 0;
+    padding: 10px; /* Dá espaço interno para o texto respirar */
+    text-align: center;
+    color: white;
+}
+
+aside {
+    border:1px solid black ;
+    border-radius: 12px;
+    overflow: hidden; 
+    width: 30%;
+    
+}
+
+aside ul {
+    margin: 100px 10px;
+    padding-left: 30px;
+
+}
+aside ul li {
+    margin: 5px;
+    text-decoration: none;
+    color: var(--cor-principal);
+}
+
+
+ 
+footer {
+    background-color: var(--cor-principal);
+    height: 4em;
+    margin-top: 1rem;
+    width: 100%;
+    padding: 10px;
+     text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+    color: white;
+
+}
