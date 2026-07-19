@@ -1,68 +1,73 @@
-:root {
-    --cor-roxa:  rgb(87, 0, 124);
-}
+@media (max-width: 37.5em) {
+    body {
+        width: 95%;
+        padding: 10px;
+    }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    header, footer {
+        padding: 15px 5px;
+    }
 
-body {
-    padding: 5;
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
+    nav {
+        width: 100%;
+    }
 
-}
-nav {
-    margin: 0 auto;
-    width: 100%;
-}
-
-nav ul {
-    display: flex;
-    margin-top: 10px;
-}
-
-nav ul li {
-    margin: 5px auto;
-    list-style: none;
-    display: inline-block; /* Garante que fiquem lado a lado corretamente */
-    padding: 0 10px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none; /* Opcional: remove o sublinhado dos links */
-}
+    nav ul {
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px 0;
+        margin-top: 5px;
+    }
+    
+        #menu {
+        font-size: 1.5rem;
+        border: 0;
+        background: none;
+        color: #000;
+        position: relative; /* ALTERADO: Impede que ele flutue no topo direito */
+        display: block;     /* NOVO: Força o botão a ocupar a linha de baixo */
+        margin: 10px auto;  /* NOVO: Centraliza o botão horizontalmente */
+        width: max-content; /* NOVO: Ajusta a largura apenas ao tamanho do ícone */
+    }
 
 
-nav a:hover {
-    color: darkgoldenrod;
-}
+    #menu::before {
+        content: "☰";
+    }
 
+    #menu.open::before {
+        content: "❎";
+    }
 
-main div{
-    display: grid;
-    margin: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
-}
+    nav ul li {
+        display: none; 
+    }
 
-main div figure {
-    margin: 10px;
+    nav ul.open li {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
 
-}
-main div figure figcaption{
-    text-align: center;
-    font-size: 0.8rem;
-}
+    nav a {
+        display: block;
+        padding: 8px 0;
+    }
 
-main img {
-    width: 150px;
-}
+    main div {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin: 15px 0;
+    }
 
-footer, header {
-    background-color: var(--cor-roxa);
-    color: white;
+    main div figure {
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    main img {
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+    }
 }
