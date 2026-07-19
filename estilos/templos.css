@@ -24,10 +24,10 @@
         border: 0;
         background: none;
         color: #000;
-        position: relative; /* ALTERADO: Impede que ele flutue no topo direito */
-        display: block;     /* NOVO: Força o botão a ocupar a linha de baixo */
-        margin: 10px auto;  /* NOVO: Centraliza o botão horizontalmente */
-        width: max-content; /* NOVO: Ajusta a largura apenas ao tamanho do ícone */
+        position: relative; 
+        display: block;     
+        margin: 10px auto; 
+        width: max-content; 
     }
 
 
