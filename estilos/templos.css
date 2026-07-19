@@ -8,19 +8,59 @@
     box-sizing: border-box;
 }
 
+body {
+    padding: 5;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+nav {
+    margin: 0 auto;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 5px auto;
+    list-style: none;
+    display: inline-block; /* Garante que fiquem lado a lado corretamente */
+    padding: 0 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none; /* Opcional: remove o sublinhado dos links */
+}
+
+
 nav a:hover {
     color: darkgoldenrod;
 }
 
 
-
-body {
-    padding: 5;
-    width: 80%;
-    margin: 0 auto;
-    align-items: center;
+main div{
+    display: grid;
+    margin: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
 }
- 
+
+main div figure {
+    margin: 10px;
+
+}
+main div figure figcaption{
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+main img {
+    width: 150px;
+}
 
 footer, header {
     background-color: var(--cor-roxa);
