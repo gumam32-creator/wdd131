@@ -29,6 +29,7 @@ header span {
 
 body h1 {
     font-family: inter, sans-serif;
+    padding: 10px;
     
 } 
 
@@ -109,22 +110,25 @@ aside {
     border:1px solid black ;
     border-radius: 12px;
     overflow: hidden; 
-    width: 30%;
+    width: 35%;
     
 }
 
 aside ul {
     margin: 100px 10px;
     padding-left: 30px;
-
+    display: grid;
+    grid-column: 1;
+    justify-self: start; /* Mudado de start para end para alinhar na direita */
+    text-align: left;
 }
 aside ul li {
     margin: 5px;
     text-decoration: none;
     color: var(--cor-principal);
+    margin-left: 20px;
+
 }
-
-
  
 footer {
     background-color: var(--cor-principal);
