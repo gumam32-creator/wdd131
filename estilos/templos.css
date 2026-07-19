@@ -1,0 +1,28 @@
+:root {
+    --cor-roxa:  rgb(87, 0, 124);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav a:hover {
+    color: darkgoldenrod;
+}
+
+
+
+body {
+    padding: 5;
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+}
+ 
+
+footer, header {
+    background-color: var(--cor-roxa);
+    color: white;
+}
