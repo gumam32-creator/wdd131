@@ -1,0 +1,108 @@
+:root {
+    --color-back-blue: rgb(15, 15, 73);
+    --color-background2-font: rgb(223, 193, 18);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Corrigido de 0 para border-box */
+}
+
+body{
+    text-align: center;
+    margin: 0 auto;
+    background-color: var(--color-background2-font);
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: var(--color-back-blue);
+}
+
+header h1 {
+    width: 100%;
+    padding: 20px 0;
+    color: var(--color-background2-font);
+    text-shadow: 1px 1px black;
+}
+
+main {
+    margin: 15px 0;
+    width: 100%;
+    min-height: 100vh; /* Alterado de height: 70% para min-height funcionar corretamente */
+    background-image: url('../imagens/principal-grande.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex; /* Garante que o pai ocupe o tamanho total do main */
+    align-items: stretch;
+}
+
+.div_main_pai {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide em duas colunas */
+    grid-template-rows: 1fr 1fr;    /* Divide em duas linhas */
+    border: 2px dashed #ccc;       /* Apenas para visualizar o mapa */
+    width: 100%;
+    color: white;
+}
+
+.titulo-data{
+    background-color: #1e7343;
+    color: #fff;
+    margin: 0 0 25px -30px;     
+    padding: 12px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    width: calc(40% + 10px);
+}
+
+.div_main_filho1 {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start; /* Garante o alinhamento no topo esquerdo */
+    align-self: start;
+}
+
+.div_main_filho2 {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: end;
+    align-self: end; /* Corrigido de flex-end para end (padrão do CSS Grid) */
+}
+
+.div_main_filho1, .div_main_filho2 {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.492);
+    margin: 50px 60px;
+    width: 400px;
+    padding: 30px; /* Adicionado padding interno uniforme para os cards */
+    text-align: left; /* Alinha o texto interno à esquerda */
+    border-radius: 8px; /* Cantos levemente arredondados para acabamento */
+}
+
+.div_main_filho1 h2, .div_main_filho2 h2 {
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.div_main_filho1 ul, .div_main_filho2 ul {
+    list-style-type: none;
+}
+
+/* Alinhamento perfeito do conteúdo interno das li */
+.div_main_filho1 li, .div_main_filho2 li {
+    display: flex;                 /* Transforma a linha em Flexbox */
+    justify-content: space-between; /* Empurra o rótulo para a esquerda e o valor para a direita */
+    gap: 15px;                     /* Espaçamento mínimo caso falte espaço */
+    padding: 6px 0;                /* Espaçamento vertical entre as linhas */
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1); /* Linha divisória sutil */
+}
+
+footer {
+    width: 100%;
+    background-color: var(--color-back-blue);
+    color: var(--color-background2-font);
+    padding: 30px 0;
+}
