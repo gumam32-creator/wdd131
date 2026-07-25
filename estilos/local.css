@@ -3,13 +3,13 @@
     --color-background2-font: rgb(223, 193, 18);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Corrigido de 0 para border-box */
+    box-sizing: border-box;
 }
 
-body{
+body {
     text-align: center;
     margin: 0 auto;
     background-color: var(--color-background2-font);
@@ -25,79 +25,121 @@ header h1 {
     padding: 20px 0;
     color: var(--color-background2-font);
     text-shadow: 1px 1px black;
+    font-size: 2.5rem;
+}
+
+/* Imagem hero responsiva */
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 main {
-    margin: 15px 0;
+    margin: 0;
     width: 100%;
-    min-height: 100vh; /* Alterado de height: 70% para min-height funcionar corretamente */
-    background-image: url('../imagens/principal-grande.webp');
+    min-height: 80vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    display: flex; /* Garante que o pai ocupe o tamanho total do main */
+    display: flex;
     align-items: stretch;
+}
+
+/* Fundo padrão para desktop */
+main {
+    background-image: url('../imagens/principal-grande.webp');
 }
 
 .div_main_pai {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Divide em duas colunas */
-    grid-template-rows: 1fr 1fr;    /* Divide em duas linhas */
-    border: 2px dashed #ccc;       /* Apenas para visualizar o mapa */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     width: 100%;
     color: white;
+    padding: 20px;
+    gap: 20px;
 }
 
-.titulo-data{
+.titulo-data {
     background-color: #1e7343;
     color: #fff;
-    margin: 0 0 25px -30px;     
-    padding: 12px 20px;
-    font-size: 24px;
+    margin: 0 0 20px -20px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
     font-weight: bold;
-    width: calc(40% + 10px);
+    width: calc(80% + 20px);
+    display: inline-block;
 }
 
-.div_main_filho1 {
+/* Cards dentro da imagem (Desktop) */
+.div_main_filho1, .div_main_filho2 {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 30px;
+    width: 100%;
+    max-width: 450px;
+    padding: 25px;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#card-inside-1 {
     grid-column: 1;
     grid-row: 1;
-    justify-self: start; /* Garante o alinhamento no topo esquerdo */
+    justify-self: start;
     align-self: start;
 }
 
-.div_main_filho2 {
+#card-inside-2 {
     grid-column: 2;
     grid-row: 2;
     justify-self: end;
-    align-self: end; /* Corrigido de flex-end para end (padrão do CSS Grid) */
+    align-self: end;
 }
 
-.div_main_filho1, .div_main_filho2 {
+/* Cards fora da imagem (Mobile) */
+#mobile-cards-container {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 15px;
+    background-color: var(--color-background2-font);
+}
+
+#card-outside-1,
+#card-outside-2 {
     color: black;
-    background-color: rgba(255, 255, 255, 0.492);
-    margin: 50px 60px;
-    width: 400px;
-    padding: 30px; /* Adicionado padding interno uniforme para os cards */
-    text-align: left; /* Alinha o texto interno à esquerda */
-    border-radius: 8px; /* Cantos levemente arredondados para acabamento */
+    background-color: rgba(255, 255, 255, 0.95);
+    margin: 10px 0;
+    width: 100%;
+    padding: 25px;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.div_main_filho1 h2, .div_main_filho2 h2 {
-    padding: 10px 0;
-    margin-bottom: 10px;
+#card-outside-1 {
+    margin-bottom: 20px;
 }
 
+/* Estilos comuns para todos os cards */
 .div_main_filho1 ul, .div_main_filho2 ul {
     list-style-type: none;
 }
 
-/* Alinhamento perfeito do conteúdo interno das li */
 .div_main_filho1 li, .div_main_filho2 li {
-    display: flex;                 /* Transforma a linha em Flexbox */
-    justify-content: space-between; /* Empurra o rótulo para a esquerda e o valor para a direita */
-    gap: 15px;                     /* Espaçamento mínimo caso falte espaço */
-    padding: 6px 0;                /* Espaçamento vertical entre as linhas */
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.1); /* Linha divisória sutil */
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.div_main_filho1 li:last-child, .div_main_filho2 li:last-child {
+    border-bottom: none;
 }
 
 footer {
@@ -105,4 +147,252 @@ footer {
     background-color: var(--color-back-blue);
     color: var(--color-background2-font);
     padding: 30px 0;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* ========== DESIGN RESPONSIVO ========== */
+
+/* Tablets e telas médias (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    main {
+        background-image: url('../imagens/principal-media.webp');
+        min-height: 75vh;
+    }
+
+    .div_main_pai {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    #card-inside-1, #card-inside-2 {
+        margin: 20px;
+        max-width: 400px;
+        padding: 20px;
+    }
+
+    .titulo-data {
+        font-size: 1.3rem;
+        width: calc(85% + 20px);
+        margin: 0 0 15px -15px;
+        padding: 8px 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Smartphones grandes e tablets pequenos (480px - 768px) */
+@media screen and (max-width: 768px) {
+    main {
+        background-image: url('../imagens/principal-media.webp');
+        min-height: 50vh;
+        background-size: cover;
+        background-position: center;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Esconde os cards dentro da imagem em mobile */
+    #card-inside-1,
+    #card-inside-2 {
+        display: none;
+    }
+
+    /* Mostra o container de cards móveis */
+    #mobile-cards-container {
+        display: block;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        padding: 15px 0;
+    }
+
+    #card-outside-1,
+    #card-outside-2 {
+        padding: 20px;
+    }
+}
+
+/* Smartphones pequenos (até 480px) */
+@media screen and (max-width: 480px) {
+    main {
+        background-image: url('../imagens/principal-pequena.webp');
+        min-height: 40vh;
+        background-size: cover;
+        background-position: center;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Esconde os cards dentro da imagem em mobile */
+    #card-inside-1,
+    #card-inside-2 {
+        display: none;
+    }
+
+    /* Mostra o container de cards móveis */
+    #mobile-cards-container {
+        display: block;
+        padding: 0 10px;
+    }
+
+    #card-outside-1,
+    #card-outside-2 {
+        padding: 15px;
+    }
+
+    .titulo-data {
+        font-size: 1rem;
+        width: calc(95% + 10px);
+        margin: 0 0 12px -5px;
+        padding: 6px 12px;
+    }
+
+    .div_main_filho1 li, .div_main_filho2 li {
+        font-size: 0.9rem;
+        padding: 6px 0;
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        padding: 12px 0;
+    }
+
+    footer {
+        padding: 20px 0;
+        font-size: 0.9rem;
+    }
+
+    footer p {
+        padding: 0 10px;
+    }
+}
+
+/* Extra small devices (até 360px) */
+@media screen and (max-width: 360px) {
+    main {
+        min-height: 35vh;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+        padding: 10px 0;
+    }
+
+    #mobile-cards-container {
+        padding: 0 8px;
+    }
+
+    #card-outside-1,
+    #card-outside-2 {
+        padding: 12px;
+    }
+
+    .titulo-data {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+        margin: 0 0 10px -3px;
+        width: calc(100% + 6px);
+    }
+
+    .div_main_filho1 li, .div_main_filho2 li {
+        font-size: 0.8rem;
+        padding: 5px 0;
+    }
+
+    #card-outside-1 {
+        margin-bottom: 15px;
+    }
+}
+
+/* Orientação paisagem em dispositivos móveis */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    main {
+        min-height: 60vh;
+        padding: 10px 0;
+    }
+
+    .div_main_pai {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 10px;
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    #card-inside-1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #card-inside-2 {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #card-inside-1, #card-inside-2 {
+        margin: 10px;
+        padding: 15px;
+        max-width: 100%;
+        width: 95%;
+    }
+
+    .titulo-data {
+        font-size: 1rem;
+        margin: 0 0 10px -10px;
+        padding: 5px 12px;
+    }
+
+    .div_main_filho1 li, .div_main_filho2 li {
+        padding: 4px 0;
+        font-size: 0.85rem;
+    }
+
+    #card-inside-2 {
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    /* Em landscape mobile, esconder cards fora e mostrar dentro */
+    #card-inside-1,
+    #card-inside-2 {
+        display: block !important;
+    }
+
+    #mobile-cards-container {
+        display: none !important;
+    }
+}
+
+/* Telas muito grandes (acima de 1440px) */
+@media screen and (min-width: 1440px) {
+    #card-inside-1, #card-inside-2 {
+        max-width: 550px;
+        padding: 30px;
+        margin: 40px 60px;
+    }
+
+    .titulo-data {
+        font-size: 1.8rem;
+        width: calc(70% + 20px);
+        margin: 0 0 25px -25px;
+        padding: 12px 25px;
+    }
+
+    .div_main_filho1 li, .div_main_filho2 li {
+        font-size: 1.1rem;
+        padding: 10px 0;
+    }
 }

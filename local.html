@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/local.css">
     <script src="scripts/local.js" defer></script>
-    <script src=""></script>
-    
-    <title>Document</title>
+    <title>Brasil - Informações</title>
 </head>
 <body>
     <header>
         <h1>Brasil</h1>
-        <div>
-            <br>
-        </div>
+    
     </header>
+    
     <main>
-        <div class="div_main_pai">
-            <div class="div_main_filho1">
+      
+        <div class="div_main_pai"> 
+            <div class="div_main_filho1" id="card-inside-1">
                 <h2 class="titulo-data">Data</h2>
                 <ul>
                     <li><strong>Área:</strong> 8.515.767 km²</li>
@@ -30,20 +28,45 @@
                     <li><strong>Internet TLD:</strong> .br</li>
                 </ul>
             </div>
-            <div class="div_main_filho2">
+            <div class="div_main_filho2" id="card-inside-2">
                 <h2 class="titulo-data">Weather ⛅</h2>
                 <ul>
-                    <li id="temp"></li>
-                    <li id="cond"></li>
-                    <li id="wind"></li>
-                    <li id="windChil"></li>
+                    <li id="temp">Temperatura: 18ºC</li>
+                    <li id="cond">Condição: Partly Cloudy</li>
+                    <li id="wind">Vento: 5km/h</li>
+                    <li id="windChil">Sensação: 9.8ºC</li>
                 </ul>
-
             </div>
         </div>
     </main>
+   
+    <div id="mobile-cards-container">
+       
+        <div class="div_main_filho1" id="card-outside-1">
+            <h2 class="titulo-data">Data</h2>
+            <ul>
+                <li><strong>Área:</strong> 8.515.767 km²</li>
+                <li><strong>Capital:</strong> Brasília</li>
+                <li><strong>Língua:</strong> Português</li>
+                <li><strong>Moeda:</strong> Real (BRL)</li>
+                <li><strong>Time Zone:</strong> UTC-3</li>
+                <li><strong>Calling Code:</strong> +55</li>
+                <li><strong>Internet TLD:</strong> .br</li>
+            </ul>
+        </div>
+        <div class="div_main_filho2" id="card-outside-2">
+            <h2 class="titulo-data">Weather ⛅</h2>
+            <ul>
+                <li id="temp-mobile">Temperatura: 18ºC</li>
+                <li id="cond-mobile">Condição: Partly Cloudy</li>
+                <li id="wind-mobile">Vento: 5km/h</li>
+                <li id="windChil-mobile">Sensação: 9.8ºC</li>
+            </ul>
+        </div>
+    </div>
+    
     <footer>
-        <p>© <span id="anoatual"></span> 👨‍💻 Emerson Maximo Junior - DEV Brasil </p>
+        <p>© <span id="anoatual"></span> 👨‍💻 Emerson Maximo Junior - DEV Brasil</p>
         <p id="ultimaModificao"></p>
     </footer>
 </body>
