@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Planejamento do Site - FlexCalculo</title>
+    <!-- Fontes Selecionadas (Google Fonts) -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- 1. PALETA DE CORES E VARIÁVEIS DO PROJETO --- */
+        :root {
+            --primary-color: #0284c7;   /* Azul Dinâmico (Links, Destaques, Botões) */
+            --secondary-color: #1e293b; /* Grafite Escuro (Títulos, Cabeçalho, Backgrounds) */
+            --accent-color: #eab308;    /* Amarelo Combustível (Alertas, Indicadores de Economia) */
+            --text-color: #334155;      /* Cinza Escuro (Texto do Corpo) */
+            --bg-light: #f8fafc;        /* Fundo Geral */
+            --bg-white: #ffffff;        /* Fundo de Cards e Seções */
+            
+            --heading-font: 'Montserrat', sans-serif;
+            --body-font: 'Open Sans', sans-serif;
+        }
+
+        /* --- 2. ESTILOS GERAIS DA PÁGINA DE PLANEJAMENTO --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--body-font);
+            color: var(--text-color);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            color: var(--bg-white);
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-family: var(--heading-font);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        section {
+            background-color: var(--bg-white);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        h2 {
+            font-family: var(--heading-font);
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h3 {
+            font-family: var(--heading-font);
+            color: var(--primary-color);
+            margin: 15px 0 10px 0;
+        }
+
+        p, ul {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: var(--secondary-color);
+        }
+
+        /* --- 3. AMBIENTE VISUAL DO ESQUEMA DE CORES --- */
+        .color-palette {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .color-box {
+            flex: 1;
+            min-width: 150px;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* --- 4. MODELOS DE WIREFRAMES (CSS GRID) --- */
+        .wireframe-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .wireframe-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .wireframe-box {
+            border: 2px dashed #94a3b8;
+            padding: 15px;
+            background-color: #f1f5f9;
+            border-radius: 6px;
+        }
+
+        .wf-layout {
+            display: grid;
+            gap: 8px;
+            background: #cbd5e1;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-align: center;
+            font-weight: bold;
+            color: #64748b;
+        }
+
+        /* Simulação Mobile */
+        .wf-mobile .wf-layout {
+            grid-template-columns: 1fr;
+        }
+
+        /* Simulação Desktop */
+        .wf-desktop .wf-layout {
+            grid-template-columns: repeat(12, 1fr);
+        }
+
+        .wf-element {
+            background: #ffffff;
+            padding: 12px;
+            border: 1px solid #94a3b8;
+            border-radius: 3px;
+        }
+
+        /* Ajustes de grid para visualização desktop */
+        .wf-desktop .wf-header    { grid-column: span 12; }
+        .wf-desktop .wf-nav       { grid-column: span 12; }
+        .wf-desktop .wf-hero      { grid-column: span 12; height: 60px; }
+        .wf-desktop .wf-calc-form { grid-column: span 7; }
+        .wf-desktop .wf-history   { grid-column: span 5; }
+        .wf-desktop .wf-footer    { grid-column: span 12; }
+
+        footer.page-footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 40px;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Plano de Planejamento do Site</h1>
+        <p>WDD 131 — Fundamentos da Web Dinâmica</p>
+    </header>
+
+    <main>
+        <!-- Nome do Site -->
+        <section id="site-name">
+            <h2>Nome do Site</h2>
+            <p><strong>Nome Proposto:</strong> FlexCalculo</p>
+            <p><strong>Descrição da Escolha:</strong> O nome combina de maneira direta o termo "Flex" (referente à tecnologia de motores bicombustíveis amplamente difundida no Brasil) com "Calculo", explicitando a natureza utilitária e matemática do sistema. É um nome curto, intuitivo, mercadologicamente claro e de fácil memorização para o motorista que busca economizar na hora de abastecer.</p>
+            <p><strong>Disponibilidade de Domínio Sugerida:</strong> flexcalculo.app / flexcalculo.com.br</p>
+        </section>
+
+        <!-- Finalidade do Site -->
+        <section id="site-purpose">
+            <h2>Finalidade do Site</h2>
+            <p>O <strong>FlexCalculo</strong> visa solucionar a dor da volatilidade de preços e a imprecisão na escolha do combustível ideal (etanol ou gasolina). Diferente de soluções genéricas baseadas na antiga e ultrapassada "regra dos 70%", o site fornecerá uma plataforma interativa avançada onde o motorista poderá inserir as especificações reais de consumo de seu próprio veículo.</p>
+            <p>Além do cálculo customizado instantâneo baseado em trajetos urbanos ou rodoviários, a plataforma disponibilizará uma seção para registro e controle de um histórico pessoal de abastecimentos, permitindo ao usuário monitorar suas despesas financeiras e eficiência energética ao longo do tempo.</p>
+        </section>
+
+        <!-- Cenários -->
+        <section id="scenarios">
+            <h2>Cenários (Público-Alvo)</h2>
+            
+            <h3>Cenário 1: O Motorista de Aplicativo</h3>
+            <p><em>"Trabalho 10 horas por dia como motorista parceiro e o combustível é o meu maior gasto fixo. Como posso descobrir com precisão se o etanol está compensando mais que a gasolina para o consumo real do meu veículo no trânsito urbano?"</em></p>
+            
+            <h3>Cenário 2: O Motorista em Viagem de Fim de Semana</h3>
+            <p><em>"Estou saindo de viagem e preciso encher o tanque na estrada. Sei que o rendimento do meu carro muda muito na rodovia. Onde posso calcular rapidamente qual combustível escolher considerando apenas o consumo rodoviário do meu modelo de carro?"</em></p>
+        </section>
+
+        <!-- Esquema de Cores -->
+        <section id="color-scheme">
+            <h2>Esquema de Cores</h2>
+            <p>As cores foram selecionadas para garantir alto contraste, legibilidade sob luz solar direta (no ambiente de postos de combustível) e uma identidade visual moderna baseada na paleta ativa deste documento:</p>
+            
+            <div class="color-palette">
+                <div class="color-box" style="background-color: #1e293b;">Grafite Escuro (#1e293b)<br><span style="font-size:0.75rem; font-weight:normal;">Títulos e Cabeçalhos</span></div>
+                <div class="color-box" style="background-color: #0284c7;">Azul Dinâmico (#0284c7)<br><span style="font-size:0.75rem; font-weight:normal;">Elementos de Ação e Links</span></div>
+                <div class="color-box" style="background-color: #eab308; color: #000;">Amarelo Combustível (#eab308)<br><span style="font-size:0.75rem; font-weight:normal;">Destaques e Alertas</span></div>
+            </div>
+        </section>
+
+        <!-- Tipografia -->
+        <section id="typography">
+            <h2>Tipografia</h2>
+            <p>Para manter o carregamento leve e otimizado para dispositivos móveis, utilizaremos duas famílias tipográficas limpas via Google Fonts:</p>
+            <ul>
+                <li><strong>Fonte de Título (Headings):</strong> <code>'Montserrat', sans-serif</code> — Aplicada em títulos principais (H1, H2, H3). Traz robustez, autoridade e excelente legibilidade em blocos isolados.</li>
+                <li><strong>Fonte do Corpo (Body Text):</strong> <code>'Open Sans', sans-serif</code> — Aplicada em parágrafos, tabelas, inputs de formulários e histórico. É uma fonte altamente limpa e confortável para leitura em telas pequenas.</li>
+            </ul>
+        </section>
+
+        <!-- Wireframe -->
+        <section id="wireframe">
+            <h2>Wireframe da Página Inicial</h2>
