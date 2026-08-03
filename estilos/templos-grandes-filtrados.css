@@ -1,0 +1,126 @@
+:root {
+    --cor-roxa:  rgb(87, 0, 124);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 5;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+nav {
+    margin: 0 auto;
+    width: 80%;
+}
+
+nav ul {
+    display: flex;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 5px auto;
+    list-style: none;
+    display: inline-block; /* Garante que fiquem lado a lado corretamente */
+    padding: 0 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none; /* Opcional: remove o sublinhado dos links */
+}
+
+
+nav a:hover {
+    color: darkgoldenrod;
+}
+
+main h1 {
+    margin: 5px;
+}
+
+
+main div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px; 
+    margin: 20px;
+    justify-items: center; 
+    align-items: center;    
+}
+
+main div figure {
+    margin: 10px;
+
+}
+main div figure figcaption{
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+main img {
+    width: 250px;
+}
+
+footer, header {
+    background-color: var(--cor-roxa);
+    color: white;
+}
+
+@media (max-width: 37.5em) {
+    body {
+        width: 95%;
+    }
+
+    #menu {
+        display: block;
+        font-size: 1.8rem;
+        border: 0;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        cursor: pointer;
+        margin: 15px auto 0 auto;
+        padding: 5px 15px;
+        border-radius: 20px;
+    }
+
+    #menu::before { 
+        content: "☰"; 
+    }
+
+    #menu.open::before { 
+        content: "✕"; 
+    }
+
+    nav ul.navigation {
+        flex-direction: column;
+        display: none;
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    nav ul.navigation.open {
+        display: flex;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    main div {
+        grid-template-columns: 1fr;
+    }
+
+    main img {
+        width: 100%;
+        max-width: 250px;
+    }
+}

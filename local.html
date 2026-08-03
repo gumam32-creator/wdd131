@@ -12,11 +12,14 @@
 <body>
     <header>
         <h1>Brasil</h1>
-    
     </header>
-    
+
     <main>
-      
+        <picture>
+                <source srcset="imagens/principal-grande.webp" media="(min-width: 1000px)">
+                <source srcset="imagens/principal-media.webp" media="(min-width: 550px)">
+                <img src="imagens/principal-pequena.webp" alt="Mico-Leão Dourado" width="400" height="200">
+        </picture>
         <div class="div_main_pai"> 
             <div class="div_main_filho1" id="card-inside-1">
                 <h2 class="titulo-data">Data</h2>
@@ -40,6 +43,7 @@
                 </ul>
             </div>
         </div>
+    
     </main>
    
     <div id="mobile-cards-container">

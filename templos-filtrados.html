@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 131 - Fundamentos da Web Dinâmica">
+    <meta name="author" content="Emerson M. Junior">
+
+    <link rel="stylesheet" href="estilos/templos-grandes-filtrados.css">
+    <script src="scripts/templos-filtrados.js" defer></script>
+    
+    <title>WDD 131 - Fundamentos da Web Dinâmica - Emerson</title>
+
+    <!---FONTES-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Album do Templo</h1>
+        <button id="menu" aria-label="Abrir menu"></button>
+        <nav>
+            <ul class="navigation">     
+                <li><a id="all" href="#" class="active">Pagina Inicial</a></li>
+                <li><a id="old" href="#">Antigo</a></li>
+                <li><a id="new" href="#">Novo</a></li>
+                <li><a id="large" href="#">Grande</a></li>
+                <li><a id="small" href="#">Pequeno</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Inicio</h2>
+        <div class="res-grid"></div>
+    </main>
+
+    <footer>
+        <p>© <span id="anoatual"></span> 👨‍💻 Emerson Maximo Junior - DEV Brasil </p>
+        <p id="ultimaModificao"></p>
+    </footer>
+</body>
+</html>

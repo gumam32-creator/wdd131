@@ -46,17 +46,10 @@ main {
     align-items: stretch;
 }
 
-/* Fundo padrão para desktop */
-main {
-    background-image: url('../imagens/principal-grande.webp');
-}
-
 .div_main_pai {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    width: 100%;
-    color: white;
+    grid-template-rows: 1fr 1fr; 
     padding: 20px;
     gap: 20px;
 }
@@ -158,7 +151,7 @@ footer p {
 /* Tablets e telas médias (768px - 1024px) */
 @media screen and (max-width: 1024px) {
     main {
-        background-image: url('../imagens/principal-media.webp');
+        
         min-height: 75vh;
     }
 
@@ -190,7 +183,7 @@ footer p {
 /* Smartphones grandes e tablets pequenos (480px - 768px) */
 @media screen and (max-width: 768px) {
     main {
-        background-image: url('../imagens/principal-media.webp');
+       
         min-height: 50vh;
         background-size: cover;
         background-position: center;
@@ -225,7 +218,7 @@ footer p {
 /* Smartphones pequenos (até 480px) */
 @media screen and (max-width: 480px) {
     main {
-        background-image: url('../imagens/principal-pequena.webp');
+      
         min-height: 40vh;
         background-size: cover;
         background-position: center;
