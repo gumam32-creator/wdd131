@@ -1,0 +1,80 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexCalculo · compare etanol e gasolina</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- CSS separado -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+
+    <!-- CABEÇALHO -->
+    <header class="main-header">
+        <h1>⚡ Flex<span>Calculo</span></h1>
+        <p>Compare etanol e gasolina com dados reais do seu carro</p>
+    </header>
+
+    <!-- SEÇÃO PRINCIPAL: CÁLCULO -->
+    <section class="card" id="calcSection">
+        <h2>📊  Qual combustível compensa mais?</h2>
+
+        <div class="form-grid">
+            <!-- Linha: modelo -->
+            <div class="form-row">
+                <label for="carSelect">🚗 Modelo</label>
+                <select id="carSelect"></select>
+            </div>
+
+            <!-- Linha: preços -->
+            <div class="form-row">
+                <label for="priceEthanol">⛽ Etanol (R$/L)</label>
+                <input type="number" id="priceEthanol" step="0.01" min="0" placeholder="ex: 3.89" />
+            </div>
+            <div class="form-row">
+                <label for="priceGasoline">⛽ Gasolina (R$/L)</label>
+                <input type="number" id="priceGasoline" step="0.01" min="0" placeholder="ex: 5.79" />
+            </div>
+
+            <!-- Ações -->
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.2rem;">
+                <button class="btn" id="calcBtn">🔍 Comparar agora</button>
+                <button class="btn btn-secondary" id="fetchApiBtn">📡 Buscar preços (API)</button>
+            </div>
+        </div>
+
+        <!-- ÁREA DE RESULTADO -->
+        <div id="resultArea" class="result-box">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.5rem;">
+                <span class="result-item"><strong>Etanol:</strong> <span id="ethanolResult">—</span></span>
+                <span class="result-item"><strong>Gasolina:</strong> <span id="gasolineResult">—</span></span>
+            </div>
+            <div>
+                <span class="result-badge" id="veredictBadge">👉 escolha um carro</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO: CATÁLOGO DE CARROS (consumo) -->
+    <section class="card">
+        <h2>📋 Modelos disponíveis</h2>
+        <div id="carCatalog" class="car-list">
+            <!-- preenchido via JS -->
+        </div>
+    </section>
+
+    <div class="footer-note">
+        FlexCalculo · eficiência sem comparação com energia · dados de consumo próprios.
+    </div>
+</div>
+
+<!-- JavaScript separado -->
+<script src="script.js"></script>
+</body>
+</html>
