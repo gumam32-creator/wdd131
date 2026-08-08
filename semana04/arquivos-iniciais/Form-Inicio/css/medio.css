@@ -1,0 +1,29 @@
+/* 35em também corresponde a 560px (se a fonte base for 16px) */
+@media only screen and (min-width: 35rem) {
+
+
+/*----------- BODY --------------*/
+
+
+
+/*----------- HEADER --------------*/
+
+
+
+/*----------- NAV --------------*/
+    nav ul {
+        display: flex;
+        margin-left: 2%;
+    }
+    nav ul li {border: none;}
+    nav ul li a{padding: .5rem 2rem;}
+    nav ul li a:hover {background-color: firebrick;}
+
+
+/*----------- MAIN --------------*/
+
+
+
+/*----------- FOOTER --------------*/
+    
+} /* fim da media query */

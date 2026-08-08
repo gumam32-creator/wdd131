@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 131 - Fundamentos da Web Dinâmica">
+    <meta name="author" content="Emerson M. Junior">
+    <link rel="stylesheet" href="styles/style.css">
+   
+    <title>Avaliação do Produto</title>
+</head>
+
+<body>
+    <header>
+        <h1>Avaliação do Produto</h1>
+    </header>
+    
+    <main>
+        <form action="avaliacao.html" method="get">
+            
+            <!-- Nome do Produto -->
+            <label for="nome_produto">Nome do Produto <span class="required">*</span></label>
+            <select name="nome_produto" id="nome_produto" required>
+                <option value="" disabled selected>Selecione um Produto...</option>
+            </select>
+
+            <!-- Classificação Geral -->
+            <fieldset>
+                <legend>Classificação Geral <span class="required">*</span></legend>
+                
+                <label for="classificacao1">
+                    <input type="radio" name="classificacao" id="classificacao1" value="1" required>
+                    ★
+                </label>
+                
+                <label for="classificacao2">
+                    <input type="radio" name="classificacao" id="classificacao2" value="2" required>
+                    ★★
+                </label>
+                
+                <label for="classificacao3">
+                    <input type="radio" name="classificacao" id="classificacao3" value="3" required>
+                    ★★★
+                </label>
+                
+                <label for="classificacao4">
+                    <input type="radio" name="classificacao" id="classificacao4" value="4" required>
+                    ★★★★
+                </label>
+                
+                <label for="classificacao5">
+                    <input type="radio" name="classificacao" id="classificacao5" value="5" required>
+                    ★★★★★
+                </label>
+            </fieldset>
+
+            <!-- Data de Instalação -->
+            <label for="data_instalacao">Data de Instalação <span class="required">*</span></label>
+            <input type="date" id="data_instalacao" name="data_instalacao" required>
+
+            <!-- Recursos Úteis -->
+            <fieldset>
+                <legend>Recursos Úteis <span class="optional">(Marque todos que se aplicam)</span></legend>
+                
+                <label for="recurso1">
+                    <input type="checkbox" name="recursos_uteis" id="recurso1" value="Durabilidade">
+                    Durabilidade
+                </label>
+                
+                <label for="recurso2">
+                    <input type="checkbox" name="recursos_uteis" id="recurso2" value="Facilidade de Uso">
+                    Facilidade de Uso
+                </label>
+                
+                <label for="recurso3">
+                    <input type="checkbox" name="recursos_uteis" id="recurso3" value="Desempenho">
+                    Desempenho
+                </label>
+                
+                <label for="recurso4">
+                    <input type="checkbox" name="recursos_uteis" id="recurso4" value="Design">
+                    Design
+                </label>
+            </fieldset>
+
+            <!-- Avaliação Escrita -->
+            <label for="avaliacao_escrita">Avaliação Escrita <span class="optional">(Opcional)</span></label>
+            <textarea name="avaliacao_escrita" id="avaliacao_escrita" rows="4" cols="50" placeholder="Digite sua avaliação aqui..."></textarea>
+
+            <!-- Nome do Usuário -->
+            <label for="nome_usuario">Seu Nome <span class="optional">(Opcional)</span></label>
+            <input type="text" name="nome_usuario" id="nome_usuario" placeholder="Digite seu nome">
+
+            <!-- Botão de Envio -->
+            <input type="submit" value="Publicar Avaliação">
+
+        </form>
+    </main>
+
+    <footer>
+        <p>© <span id="anoatual"></span> 👨‍💻 Emerson Maximo Junior - DEV Brasil</p>
+        <p id="ultimaModificao"></p>
+    </footer>
+    <script src="scripts/script.js"></script>
+
+</body>
+</html>

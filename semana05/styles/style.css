@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e8f0fe 0%, #d4e4f7 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.container {
+    background: #ffffff;
+    max-width: 720px;
+    width: 100%;
+    border-radius: 24px;
+    padding: 2.5rem 2.5rem 2rem;
+    box-shadow: 0 20px 60px rgba(26, 67, 113, 0.15);
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    margin-bottom: 2rem;
+    text-align: center;
+    border-bottom: 3px solid #e8f0fe;
+    padding-bottom: 1.2rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a365d;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+header h1::before {
+    content: "⭐";
+    font-size: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #2d3748;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.required {
+    color: #e53e3e;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.optional {
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: #718096;
+    background: #edf2f7;
+    padding: 0.1rem 0.6rem;
+    border-radius: 20px;
+    margin-left: 0.3rem;
+}
+
+select,
+input[type="date"],
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f7fafc;
+    transition: all 0.3s ease;
+    color: #2d3748;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #3182ce;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(49, 130, 206, 0.15);
+}
+
+select:hover,
+input:hover,
+textarea:hover {
+    border-color: #a0aec0;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+fieldset {
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.2rem 1.5rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+fieldset:hover {
+    border-color: #bee3f8;
+}
+
+fieldset legend {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #2d3748;
+    padding: 0 0.5rem;
+}
+
+.radio-group {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-weight: 400;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    color: #cbd5e0;
+    margin: 0;
+}
+
+.radio-group label:hover {
+    background: #ebf8ff;
+    color: #f6ad55;
+    transform: scale(1.1);
+}
+
+.radio-group input[type="radio"] {
+    appearance: none;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+}
+
+.radio-group input[type="radio"]:checked + span {
+    color: #f6ad55;
+    text-shadow: 0 0 12px rgba(246, 173, 85, 0.4);
+}
+
+.radio-group input[type="radio"]:focus-visible + span {
+    outline: 2px solid #3182ce;
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem 1.5rem;
+    padding: 0.5rem 0;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: #2d3748;
+    cursor: pointer;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    margin: 0;
+}
+
+.checkbox-group label:hover {
+    background: #ebf8ff;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+    accent-color: #3182ce;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #2b6cb0 0%, #2c5282 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 14px rgba(43, 108, 176, 0.3);
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(43, 108, 176, 0.4);
+    background: linear-gradient(135deg, #3182ce 0%, #2b6cb0 100%);
+}
+
+.btn-submit:active {
+    transform: translateY(0px);
+}
+
+.btn-submit::before {
+    content: "📤";
+    font-size: 1.3rem;
+}
+
+footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e8f0fe;
+    text-align: center;
+    color: #4a5568;
+    font-size: 0.9rem;
+    max-width: 720px;
+    width: 100%;
+}
+
+footer p {
+    margin: 0.2rem 0;
+}
+
+footer .name {
+    font-weight: 600;
+    color: #2b6cb0;
+}
+
+select option[disabled] {
+    color: #a0aec0;
+}
+
+fieldset label {
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem 1.5rem;
+    }
+    header h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1.5rem 1.2rem;
+    }
+    header h1 {
+        font-size: 1.4rem;
+    }
+    header h1::before {
+        font-size: 1.5rem;
+    }
+    .radio-group label {
+        font-size: 1.4rem;
+        padding: 0.2rem 0.4rem;
+    }
+    .checkbox-group {
+        gap: 0.5rem 1rem;
+    }
+    .btn-submit {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+    fieldset {
+        padding: 1rem 1rem 1.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+    .container {
+        padding: 1rem 0.8rem;
+        border-radius: 16px;
+    }
+    .radio-group {
+        gap: 0.2rem;
+    }
+    .radio-group label {
+        font-size: 1.2rem;
+        padding: 0.1rem 0.3rem;
+    }
+    fieldset {
+        padding: 0.8rem 0.6rem 1rem;
+    }
+    select,
+    input[type="date"],
+    input[type="text"],
+    textarea {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
