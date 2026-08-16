@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexCalculo · Histórico de Comparativos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+    <header class="main-header">
+        <h1>⚡ Flex<span>Calculo</span></h1>
+        <p>Seus cálculos salvos no navegador</p>
+        <nav class="main-nav">
+            <a href="index.html">Calculadora</a>
+            <a href="historico.html" class="active">Histórico</a>
+            <a href="contato.html">Contato / Formulário</a>
+        </nav>
+    </header>
+
+    <section class="card">
+        <h2>📜 Histórico de Simuladores</h2>
+        <p class="section-desc">Abaixo estão armazenadas suas consultas mais recentes salvas via LocalStorage:</p>
+        
+        <div id="historyList" class="car-list">
+            <!-- Preenchido via JavaScript -->
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+            <button class="btn btn-secondary" id="clearHistoryBtn">🗑️ Limpar Histórico</button>
+        </div>
+    </section>
+
+    <footer class="footer-note">
+        <p>FlexCalculo · Armazenamento local seguro.</p>
+        <p><a href="referencias.html">Página de Referências e Fontes</a></p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

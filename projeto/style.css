@@ -1,4 +1,3 @@
-/* style.css */
 * {
     margin: 0;
     padding: 0;
@@ -34,7 +33,7 @@ body {
     width: 100%;
 }
 
-/* ---------- HEADER ---------- */
+/* HEADER & MENU COMUM */
 .main-header {
     background: var(--secondary);
     color: white;
@@ -48,7 +47,6 @@ body {
 .main-header h1 {
     font-family: var(--heading-font);
     font-size: 2.4rem;
-    letter-spacing: -0.5px;
 }
 
 .main-header h1 span {
@@ -56,21 +54,42 @@ body {
 }
 
 .main-header p {
-    font-weight: 400;
     color: #cbd5e1;
     margin-top: 0.3rem;
     font-size: 1.05rem;
 }
 
-/* ---------- CARDS ---------- */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* CARDS & ESTRUTURA */
 .card {
     background: var(--bg-white);
     border-radius: var(--radius);
-    padding: 1.8rem 1.8rem 2rem;
+    padding: 1.8rem;
     box-shadow: var(--shadow);
     margin-bottom: 2rem;
     border-left: 6px solid var(--primary);
-    transition: 0.15s;
 }
 
 .card h2 {
@@ -78,12 +97,13 @@ body {
     color: var(--secondary);
     font-size: 1.4rem;
     margin-bottom: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
 }
 
-/* ---------- FORMULÁRIO ---------- */
+.section-desc {
+    margin-bottom: 1rem;
+}
+
+/* FORMULÁRIO COMPATÍVEL */
 .form-grid {
     display: flex;
     flex-direction: column;
@@ -99,25 +119,31 @@ body {
 
 .form-row label {
     font-weight: 600;
-    min-width: 100px;
+    min-width: 140px;
     color: var(--secondary);
 }
 
-select, input {
+select, input, textarea {
     padding: 0.7rem 1rem;
     border: 1.5px solid #e2e8f0;
-    border-radius: 40px;
+    border-radius: 8px;
     font-family: var(--body-font);
     font-size: 1rem;
     background: white;
-    transition: 0.2s;
     flex: 1 1 200px;
 }
 
-select:focus, input:focus {
+select:focus, input:focus, textarea:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(2,132,199,0.2);
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
 }
 
 .btn {
@@ -130,32 +156,44 @@ select:focus, input:focus {
     font-size: 1rem;
     cursor: pointer;
     transition: 0.2s;
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
-    box-shadow: 0 4px 8px rgba(2,132,199,0.25);
 }
 
 .btn:hover {
     background: #0369a1;
     transform: scale(0.98);
-    box-shadow: 0 6px 12px rgba(2,132,199,0.3);
 }
 
 .btn-secondary {
     background: var(--secondary);
-    box-shadow: 0 4px 8px rgba(30,41,59,0.2);
 }
 
 .btn-secondary:hover {
     background: #0f172a;
 }
 
-/* ---------- RESULTADO ---------- */
+ 
+.banner-container {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.lazy-banner {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+ 
 .result-box {
     background: #f1f5f9;
-    border-radius: 40px;
-    padding: 1.5rem 1.8rem;
+    border-radius: var(--radius);
+    padding: 1.5rem;
     margin-top: 1.8rem;
     display: flex;
     flex-wrap: wrap;
@@ -164,15 +202,7 @@ select:focus, input:focus {
     gap: 1.2rem;
 }
 
-.result-item {
-    display: flex;
-    align-items: baseline;
-    gap: 0.4rem;
-    font-size: 1.1rem;
-}
-
 .result-item strong {
-    font-weight: 700;
     color: var(--secondary);
 }
 
@@ -180,24 +210,21 @@ select:focus, input:focus {
     background: var(--accent);
     color: #1e293b;
     font-weight: 700;
-    padding: 0.3rem 1.4rem;
+    padding: 0.5rem 1.4rem;
     border-radius: 40px;
-    font-size: 1.2rem;
-    letter-spacing: 0.3px;
+    font-size: 1.1rem;
 }
 
-/* ---------- CATÁLOGO DE CARROS ---------- */
 .car-list {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    margin-top: 0.6rem;
 }
 
 .car-item {
     background: #f8fafc;
-    border-radius: 40px;
-    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -208,30 +235,10 @@ select:focus, input:focus {
 .car-item .name {
     font-weight: 700;
     color: var(--secondary);
-    min-width: 110px;
+    min-width: 130px;
 }
 
-.car-item .spec {
-    font-size: 0.9rem;
-    color: #475569;
-}
-
-.car-item .spec span {
-    font-weight: 600;
-    color: var(--secondary);
-}
-
-/* ---------- RESPONSIVO ---------- */
-@media (max-width: 640px) {
-    .main-header h1 { font-size: 1.8rem; }
-    .card { padding: 1.2rem; }
-    .form-row { flex-direction: column; align-items: stretch; }
-    .form-row label { min-width: auto; }
-    .result-box { flex-direction: column; align-items: stretch; text-align: center; }
-    .btn { justify-content: center; }
-}
-
-/* ---------- FOOTER ---------- */
+ 
 .footer-note {
     margin-top: 2.5rem;
     text-align: center;
@@ -239,4 +246,17 @@ select:focus, input:focus {
     color: #94a3b8;
     border-top: 1px solid #e2e8f0;
     padding-top: 1.5rem;
+}
+
+.footer-note a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+ 
+@media (max-width: 640px) {
+    .main-header h1 { font-size: 1.8rem; }
+    .form-row { flex-direction: column; align-items: stretch; }
+    .form-row label { min-width: auto; }
+    .result-box { flex-direction: column; align-items: stretch; text-align: center; }
 }

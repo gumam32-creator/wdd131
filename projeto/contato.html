@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexCalculo · Contato e Sugestões</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+    <header class="main-header">
+        <h1>⚡ Flex<span>Calculo</span></h1>
+        <p>Fale conosco ou cadastre um novo veículo</p>
+        <nav class="main-nav">
+            <a href="index.html">Calculadora</a>
+            <a href="historico.html">Histórico</a>
+            <a href="contato.html" class="active">Contato / Formulário</a>
+        </nav>
+    </header>
+
+    <section class="card">
+        <h2>📩 Formulário de Atendimento e Sugestão</h2>
+        
+        <form id="contactForm" class="form-grid">
+            <div class="form-row">
+                <label for="userName">👤 Nome Completo:</label>
+                <input type="text" id="userName" required placeholder="Digite seu nome" />
+            </div>
+
+            <div class="form-row">
+                <label for="userEmail">✉️ E-mail de Contato:</label>
+                <input type="email" id="userEmail" required placeholder="seuemail@exemplo.com" />
+            </div>
+
+            <div class="form-row">
+                <label for="subject">📌 Assunto:</label>
+                <select id="subject" required>
+                    <option value="">Selecione uma opção...</option>
+                    <option value="sugestao">Sugestão de novo veículo</option>
+                    <option value="duvida">Dúvida sobre consumo</option>
+                    <option value="feedback">Feedback do sistema</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="userMessage">💬 Mensagem:</label>
+                <textarea id="userMessage" rows="5" required placeholder="Escreva sua mensagem aqui..."></textarea>
+            </div>
+
+            <div>
+                <button type="submit" class="btn">🚀 Enviar Mensagem</button>
+            </div>
+        </form>
+
+        <div id="formFeedback" class="result-box" style="display: none; margin-top: 1rem;">
+            <span id="feedbackText"></span>
+        </div>
+    </section>
+
+    <footer class="footer-note">
+        <p>FlexCalculo · Atendimento ao Usuário.</p>
+        <p><a href="referencias.html">Página de Referências e Fontes</a></p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
